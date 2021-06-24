@@ -1,4 +1,12 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:portfolioapp/constants.dart';
+import 'package:portfolioapp/screens/main/components/more_info.dart';
+import 'package:portfolioapp/screens/main/components/skill_widget.dart';
+import 'package:portfolioapp/screens/main/components/skills.dart';
+
+import 'my_info.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
@@ -10,33 +18,29 @@ class SideMenu extends StatelessWidget {
     return Drawer(
       child: Column(
         children: [
-          AspectRatio(
-            aspectRatio: 1.23,
-            child: Container(
-              color: Color(0xFF242430),
+          MyInfo(),
+          Expanded(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.all(defaultPadding),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Spacer(
-                    flex: 2,
+                  MoreInfoText(
+                    title: 'Residence',
+                    text: 'Perú',
                   ),
-                  CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage('assets/images/fotoCv.png'),
+                  MoreInfoText(
+                    title: 'City',
+                    text: 'Arequipa',
                   ),
-                  Spacer(),
-                  Text(
-                    'Kevyn Melo',
-                    style: Theme.of(context).textTheme.subtitle2,
+                  MoreInfoText(
+                    title: 'Phone Number',
+                    text: '+51 993 728 591',
                   ),
-                  Text(
-                    'Flutter Developer',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontWeight: FontWeight.w200, height: 1.5),
+                  MoreInfoText(
+                    title: 'Email',
+                    text: 'kmmgcg@gmail.com',
                   ),
-                  Spacer(
-                    flex: 2,
-                  ),
+                  Skills(),
                 ],
               ),
             ),
