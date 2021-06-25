@@ -4,7 +4,8 @@ import 'package:portfolioapp/constants.dart';
 import 'components/side_menu.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
+  const MainPage({Key? key, required this.children}) : super(key: key);
+  final List<Widget> children;
 
   @override
   _MainPageState createState() => _MainPageState();
@@ -23,13 +24,17 @@ class _MainPageState extends State<MainPage> {
             children: [
               //7+2 = 9   2/9 = 0.22%
               Expanded(flex: 2, child: SideMenu()),
+              SizedBox(
+                width: defaultPadding,
+              ),
               //7+2 = 9   7/9 = 0.78%
               Expanded(
-                flex: 7,
-                child: Container(
-                  color: Colors.blue,
-                ),
-              ),
+                  flex: 7,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [...widget.children],
+                    ),
+                  )),
             ],
           ),
         ),
