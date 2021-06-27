@@ -27,7 +27,7 @@ class SkillWidget extends StatelessWidget {
                 children: [
                   CircularProgressIndicator(
                     value: value,
-                    color: primaryColor,
+                    valueColor: new AlwaysStoppedAnimation<Color>(primaryColor),
                     backgroundColor: darkColor,
                   ),
                   Center(

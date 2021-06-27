@@ -15,3 +15,5 @@ const urlLinkedin =
     'https://www.linkedin.com/in/kevyn-mauro-melo-gonzales-183160208/';
 
 const urlGithub = 'https://github.com/MeloGon';
+const urlCv =
+    'https://drive.google.com/file/d/12EpxG4exmnYgv66dipkIfSdaVBdWbGLs/view?usp=drivesdk';

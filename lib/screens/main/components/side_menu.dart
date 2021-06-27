@@ -6,6 +6,7 @@ import 'package:portfolioapp/screens/main/components/more_info.dart';
 import 'package:portfolioapp/screens/main/components/skills.dart';
 import 'package:portfolioapp/screens/main/components/social_buttons.dart';
 import 'package:portfolioapp/screens/main/components/summary.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'my_info.dart';
 
@@ -52,7 +53,11 @@ class SideMenu extends StatelessWidget {
                   Divider(),
                   SizedBox(height: defaultPadding / 2),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      await canLaunch(urlCv)
+                          ? await launch(urlCv)
+                          : throw 'Could not launch $urlLinkedin';
+                    },
                     child: FittedBox(
                       child: Row(
                         children: [

@@ -26,7 +26,7 @@ class AnimatedCircularProgressIndicator extends StatelessWidget {
               children: [
                 CircularProgressIndicator(
                   value: value,
-                  color: primaryColor,
+                  valueColor: new AlwaysStoppedAnimation<Color>(primaryColor),
                   backgroundColor: darkColor,
                 ),
                 Center(
@@ -83,7 +83,7 @@ class AnimatedLinearProgressIndicator extends StatelessWidget {
             SizedBox(height: defaultPadding / 2),
             LinearProgressIndicator(
               value: value,
-              color: primaryColor,
+              valueColor: new AlwaysStoppedAnimation<Color>(primaryColor),
               backgroundColor: darkColor,
             ),
           ],
